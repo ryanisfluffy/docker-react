@@ -6,4 +6,4 @@ before_install:
     - docker build -t ryanisfluffy/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run ryanisfluffy/docker-react npm run test -- --coverage
+  - docker run -e CI=true ryanisfluffy/docker-react npm run test -- --watchAll=false
